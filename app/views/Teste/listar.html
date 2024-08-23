@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+ <h1>Listagem de Postagens</h1>
+ <form action="@{Teste.listar}">
+<input type="text" name="termo" value="${termo}" /> 
+<input type="submit" value="Pesquisar"/>
+
+</form>
+    <ul>
+        #{list items:teste, as:'t'}
+        <li>
+            <strong>Nome:</strong> ${t.nome} <br>
+            <strong>Sobrenome:</strong> ${t.sobrenome} <br>
+            <strong>Data de Nascimento:</strong> ${t.dataNasc} <br>
+            <strong>Endereço:</strong> ${t.endereco} <br>
+           
+            <a href="@{Teste.remover(Testando.id)}" onclick="return confirm('Tem certeza que deseja excluir este teste?')">Excluir</a>
+            <hr>
+        </li>
+        #{/list}
+    </ul>
+    <a href="@{Teste.form()}">Adicionar um novo teste</a>

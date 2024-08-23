@@ -1,0 +1,18 @@
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+<form action="@{Teste.salvar}" method="post">
+<input type="hidden" name="t.id" value="${t?.id}" />
+<label for="nome">Nome:</label>
+<input type="text" id="t.nome" name="nome" />
+
+<label for="sobrenome">sobrenome:</label>
+<input type="text" id="t.sobrenome" name=sobrenome/>
+
+<label for="dataNasc">data de nascimento:</label>
+<input type="date" id="t.dataNasc" name=dataNasc/>
+
+<label for="endereco">Endereço:</label>
+<input type="text" id="t.endereco" name=endereco/>
+</form>
+<a href="@{Teste.listar}">Ir para listagem</a>
